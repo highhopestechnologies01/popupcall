@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Security Services</title>
+
+  <!-- Keep linking your existing stylesheet(s) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lightweight fallback styles so layout looks reasonable if CSS isn't loaded -->
+  <style>
+    :root { --accent:#0b63d6; --danger:#b00020; --card-bg:#fff; --card-color:#111; }
+    html,body { height:100%; margin:0; font-family: Arial, Helvetica, sans-serif; background:#071224; color:#fff; }
+    .container-fluid { padding:20px; box-sizing:border-box; max-width:1100px; margin:0 auto; }
+    .accept-box { display:block; background:var(--card-bg); color:var(--card-color); border-radius:8px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,.5); margin:16px auto; }
+    .headers { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #d6d5d5; background:#f6f6f6; }
+    .title { font-weight:700; display:flex; gap:8px; align-items:center; }
+    .logo3 { height:28px; width:auto; display:inline-block; }
+    .textIntro { padding:14px 16px; font-size:14px; }
+    .text-danger { color:var(--danger); font-weight:700; display:block; }
+    .alert-banner { width:100%; height:auto; display:block; }
+    .text-details { padding:14px 16px; background:#fbfbfb; color:#111; font-size:14px; }
+    .mynum { font-weight:700; display:inline-block; margin-top:6px; background:#eee; color:#111; padding:4px 6px; border-radius:4px; }
+    .bottom-details { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 16px; background:#f1f1f1; }
+    .ms-title { font-weight:600; margin-left:8px; }
+    .cancel-button, .scan-now { padding:8px 12px; border-radius:6px; cursor:pointer; user-select:none; }
+    .blue-box { background:var(--accent); color:#fff; border-radius:8px; padding:16px; margin:12px auto; max-width:700px; }
+    .action_buttons { display:flex; gap:12px; justify-content:center; margin-top:12px; }
+    .action_buttons a { text-decoration:none; padding:8px 18px; border-radius:6px; background:rgba(255,255,255,.12); color:#fff; }
+    .page-footer { margin-top:20px; text-align:center; }
+    marquee { margin-top:10px; display:block; }
+    /* Responsive tweaks */
+    @media (max-width:600px) {
+      .headers { padding:10px; }
+      .textIntro, .text-details { padding:12px; font-size:13px; }
+    }
+  </style>
+</head>
+
+<body id="elementToFullscreen">
+
+  <!-- audio elements (IDs preserved) -->
+  <audio id="warningSound" loop preload="none">
+    <source src="beep1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="alertSound" loop preload="none">
+    <source src="eng.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container-fluid">
+
+    <!-- Main simulated alert card: IDs/classes preserved exactly -->
+    <section class="accept-box" role="dialog" aria-labelledby="txtadd" aria-describedby="sim-desc">
+      <header class="headers">
+        <div id="txtadd" class="fl title" aria-hidden="false">
+          <span class="fl ilb"><img src="defend.png" alt="logo" class="logo3"></span>
+          <span>Security Services</span>
+        </div>
+
+        <div id="txts1" class="fl title2 close" role="button" aria-label="Close simulation">
+          <a href="#" title="Close"><img src="x.png" alt="close" style="height:18px;"></a>
+        </div>
+      </header>
+
+      <div class="textIntro" id="sim-desc">
+        <!-- kept same app name text but clarified as simulation -->
+        <span class="text-danger">Simulation Notice — Demo Content Only</span>
+        <div style="margin-top:8px; font-weight:600;">
+          App: Ads.fiancetrack(2).dll<br>
+          Threat Detected: Trojan Spyware
+        </div>
+      </div>
+
+      <!-- banner retained -->
+      <img class="alert-banner" src="v.jpg" alt="Alert banner">
+
+      <div class="text-details">
+        Access to this page has been restricted for demonstration and safety reasons.<br>
+        <span class="mynum">Call (Demo): +X-XXX-XXX-XXXX</span>
+      </div>
+
+      <div class="bottom-details" aria-hidden="false">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <img class="bg" src="ms.png" alt="brand" style="height:28px;">
+          <span class="ms-title">Microsoft</span>
+        </div>
+
+        <nav>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;gap:8px;align-items:center;">
+            <li>
+              <a href="#" aria-label="Cancel action">
+                <div class="fr cancel-button" role="button" tabindex="0">
+                  <span id="addtochromebutton">Cancel</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Scan now">
+                <div class="fr scan-now" role="button" tabindex="0">
+                  <span id="addtochromebutton">Scan</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Secondary message box (structure kept) -->
+    <aside class="blue-box" role="note">
+      <p class="text-center heading" style="font-weight:700; margin:0 0 6px 0;">MS WINDOWS DEFENDER - Warning Alert System (DEMO)</p>
+      <p style="margin:6px 0;">** ACCESS HAS BEEN BLOCKED FOR SECURITY REASONS AND FOR THE SAFETY **</p>
+
+      <div style="font-size:14px; line-height:1.4;">
+        <p>Your system simulation indicates a mock spyware condition. The following data is shown only as part of the demo:</p>
+        <p>
+          &gt; Email Passwords<br>
+          &gt; Banking Passwords<br>
+          &gt; Facebook Login<br>
+          &gt; Photos &amp; Files
+        </p>
+        <p>Note: This page is a simulation for testing or educational purposes. It is <strong>not</strong> a real Windows notification.</p>
+        <p style="margin-top:8px; font-size:14px;">
+          Demo Contact (not real): <strong>+X-XXX-XXX-XXXX</strong>
+        </p>
+
+        <div class="action_buttons" role="group" aria-label="Demo actions">
+          <a class="active" id="leave_page" href="#" role="button" aria-pressed="false">Allow</a>
+          <a class="active" id="leave_page" href="#" role="button" aria-pressed="false">Deny</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Footer area -->
+  <footer class="page-footer" role="contentinfo">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="right-foot" style="text-align:center; padding:6px 12px;">
+          <span class="text-font"><img src="ms.png" alt="sim" style="height:18px;"> Call Microsoft Security Centre:</span>
+          <span style="font-weight:700;padding-left:12px;color:#fff;">(Toll-Free) <span style="border:1px solid #fff;border-radius:5px;padding:2px 6px;">+X-XXX-XXX-XXXX</span></span>
+        </div>
+      </div>
+
+      <div class="col-md-12" style="margin-top:8px;">
+        <marquee width="100%" direction="left" height="60px">
+          <small class="text-left" style="color:#eee;font-size:11px;">
+            This is a simulated alert used for testing and awareness. It is not an official Windows notification. Do not act on demo pages as if they were real alerts.
+          </small>
+        </marquee>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Rewritten JS (keeps IDs and classes intact). Your existing scripts will still find the same elements. -->
+  <script>
+    (function () {
+      // Helper: safe query that returns first element only
+      function $(sel){ return document.querySelector(sel); }
+      function $all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+
+      // Preserve behavior: audio controls with same ids
+      var warningSound = document.getElementById('warningSound');
+      var alertSound = document.getElementById('alertSound');
+
+      // Find clickable items that your CSS/JS might expect
+      var scanControls = $all('.scan-now, #addtochromebutton');
+      var cancelControls = $all('.cancel-button, #addtochromebutton');
+
+      // A single handler used for demo interactions
+      function handleDemoAction(e){
+        e && e.preventDefault && e.preventDefault();
+        // toggle warning sound for demo
+        if (warningSound) {
+          if (warningSound.paused) {
+            warningSound.play().catch(function(){ /* autoplay blocked */ });
+            showToast('Simulation: Scan started');
+          } else {
+            warningSound.pause();
+            warningSound.currentTime = 0;
+            showToast('Simulation: Scan stopped');
+          }
+        } else {
+          showToast('Simulation action acknowledged');
+        }
+      }
+
+      // Attach handlers to all scan/cancel-like controls (IDs/classes preserved)
+      scanControls.forEach(function(el){ el.addEventListener('click', handleDemoAction); el.addEventListener('keydown', function(e){ if(e.key==='Enter') handleDemoAction(e); }); });
+      cancelControls.forEach(function(el){ el.addEventListener('click', function(e){ e.preventDefault(); var box = $('.accept-box'); if(box) box.style.display = 'none'; showToast('Simulation closed'); }); });
+
+      // Keep the close icon behavior (txts1 id preserved)
+      var closeBtnWrap = document.getElementById('txts1');
+      if (closeBtnWrap) {
+        closeBtnWrap.addEventListener('click', function(e){
+          e.preventDefault();
+          var box = $('.accept-box'); if (box) box.style.display = 'none';
+        });
+      }
+
+      // Leave page anchors with same id (duplicate IDs in original kept)
+      var leaveEls = document.querySelectorAll('#leave_page');
+      leaveEls.forEach(function(a){
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          showToast('Simulation: action received');
+        });
+      });
+
+      // Small toast helper (non-blocking notification)
+      function showToast(msg){
+        // create temporary toast element
+        var t = document.createElement('div');
+        t.textContent = msg;
+        t.style.position = 'fixed';
+        t.style.bottom = '18px';
+        t.style.left = '50%';
+        t.style.transform = 'translateX(-50%)';
+        t.style.background = 'rgba(0,0,0,0.75)';
+        t.style.color = '#fff';
+        t.style.padding = '8px 14px';
+        t.style.borderRadius = '6px';
+        t.style.zIndex = 2147483647;
+        t.style.fontSize = '13px';
+        document.body.appendChild(t);
+        setTimeout(function(){ t.style.transition = 'opacity .4s'; t.style.opacity = 0; }, 1500);
+        setTimeout(function(){ try{ document.body.removeChild(t); }catch(e){} }, 2000);
+      }
+
+      // Accessibility: allow Esc to close the demo box
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') {
+          var box = $('.accept-box'); if (box) box.style.display = 'none';
+        }
+      });
+
+      // Prevent accidental unload within demo (keeps original UX idea but mild)
+      window.addEventListener('beforeunload', function (ev) {
+        // This message will be shown only in browsers that support it; keep light-handed text.
+        var message = 'Simulation in progress — are you sure you want to leave?';
+        (ev || window.event).returnValue = message;
+        return message;
+      });
+    })();
+  </script>
+</body>
+</html>
